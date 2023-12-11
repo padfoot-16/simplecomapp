@@ -24,10 +24,9 @@ class IntroPage extends StatelessWidget {
             Text("Premium Quality Products",
                 style: TextStyle(
                     color: Theme.of(context).colorScheme.inversePrimary)),
+            const SizedBox(height: 25),
 
-            MyButton(onTap: () {
-              
-            }, child: Icon(Icons.arrow_forward))        
+            MyButton(onTap: () => Navigator.pushNamed(context, "/shop_page"), child: Icon(Icons.arrow_forward))        
           ],
         ),
       ),
