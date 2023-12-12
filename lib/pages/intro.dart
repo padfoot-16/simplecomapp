@@ -1,11 +1,14 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:simple_ecom_app/components/mybutton.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});
+  
 
   @override
   Widget build(BuildContext context) {
+    final currentuser = FirebaseAuth.instance.currentUser!;
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Center(
@@ -18,7 +21,7 @@ class IntroPage extends StatelessWidget {
               color: Theme.of(context).colorScheme.inversePrimary,
             ),
             const SizedBox(height: 25),
-            const Text("Minimal Shop",
+            const Text("S&A Shop ",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24)),
             const SizedBox(height: 10),
             Text("Premium Quality Products",

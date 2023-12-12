@@ -14,14 +14,6 @@ import 'firebase_options.dart';
 void main() async {
    WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  // runApp(
-    // MultiProvider(providers: [
-    //   ChangeNotifierProvider<AuthService>(create: (context) => AuthService(),
-    //   child: MyApp(),
-    //   ),
-    //   ChangeNotifierProvider<Shop>(create: (context) => Shop(),
-    //   child: ShopPage(),
-    // )]));
     runApp(
     MultiProvider(
       providers: [
@@ -45,7 +37,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/intro_page': (context) => IntroPage(),
         '/shop_page': (context) => ShopPage(),
-        '/cart_page': (context) => CartPage()
+        '/cart_page': (context) => CartPage(),
+        '/auth_page':(context) => AuthGate()
       },
     );
   }

@@ -60,10 +60,10 @@ class _LoginPageState extends State<LoginPage> {
                       bottomRight: Radius.circular(60))),
               child: Column(
                 children: [
-                  // Container(
-                  //     height: 220,
-                  //     padding: const EdgeInsets.all(16),
-                  //     child: Image.asset("assets/pulse.png")),
+                  Container(
+                      height: 220,
+                      padding: const EdgeInsets.all(16),
+                      child: Icon(Icons.trolley,size: 150,),),
                   const SizedBox(
                     height: 5,
                   ),
@@ -135,14 +135,15 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(
                       height: 25,
                     ),
-                    // Center(
-                    //   child: GestureDetector(
-                    //     onTap: googlesign,
-                    //     child: SizedBox(
-                    //         height: 70,
-                    //         child: Image.asset("assets/goo.png")),
-                    //   ),
-                    // ),
+                    Center(
+                      child: GestureDetector(
+                        onTap: googlesign,
+                        child: SizedBox(
+                            height: 70,
+                            child: Image.asset("lib/assets/goo.png")
+                            ),
+                      ),
+                    ),
                     const SizedBox(
                       height: 25,
                     ),

@@ -1,11 +1,22 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:simple_ecom_app/components/my_listtile.dart';
+import 'package:simple_ecom_app/services/auth/auth_service.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
+  
 
   @override
   Widget build(BuildContext context) {
+    // final currentuser = FirebaseAuth.instance.currentUser!;
+    void signOut() {
+    final authService = Provider.of<AuthService>(context, listen: false);
+    authService.signOut();
+    Navigator.pushNamed(context, "/auth_page");
+    }
+
     return Drawer(
       backgroundColor: Theme.of(context).colorScheme.background,
       child: Column(
@@ -15,10 +26,15 @@ class MyDrawer extends StatelessWidget {
             children: [
               DrawerHeader(
               child: Center(
-            child: Icon(
-              Icons.trolley,
-              size: 100,
-              color: Theme.of(context).colorScheme.inversePrimary,
+            child: Column(
+              children: [
+                Icon(
+                  Icons.trolley,
+                  size: 100,
+                  color: Theme.of(context).colorScheme.inversePrimary,
+                ),
+                // Text(currentuser.email!)
+              ],
             ),
           )),
           SizedBox(
@@ -44,7 +60,7 @@ class MyDrawer extends StatelessWidget {
             child: MyListtile(
               icon: Icons.logout,
               text: "Exit",
-              onTap: () => Navigator.pushNamed(context, "/intro_page"),
+              onTap: signOut,
             ),
           ),
         ],

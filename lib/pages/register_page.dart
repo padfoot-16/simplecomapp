@@ -57,10 +57,10 @@ class _RegistrePageState extends State<RegistrePage> {
                       bottomRight: Radius.circular(60))),
               child: Column(
                 children: [
-                  // Container(
-                  //     height: 220,
-                  //     padding: const EdgeInsets.all(16),
-                  //     child: Image.asset("assets/pulse.png")),
+                  Container(
+                      height: 220,
+                      padding: const EdgeInsets.all(16),
+                      child: Icon(Icons.trolley,size: 150,),),
                   const SizedBox(
                     height: 5,
                   ),
