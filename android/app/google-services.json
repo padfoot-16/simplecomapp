@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "282446267551",
+    "project_id": "simple-ecom-app",
+    "storage_bucket": "simple-ecom-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282446267551:android:06fde0addeb150c9bf8eaa",
+        "android_client_info": {
+          "package_name": "com.example.simple_ecom_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282446267551-slss4fq1sd0p4rmf849a76d96olklq98.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0GlFmNADxspaL_qMLO1Q5zDbt_bEpPzU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "282446267551-slss4fq1sd0p4rmf849a76d96olklq98.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "282446267551-823riibc9old8mdni6t2uaevohk3hcui.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.simpleEcomApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
