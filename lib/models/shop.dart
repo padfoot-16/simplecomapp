@@ -1,7 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:simple_ecom_app/models/order.dart';
 import 'package:simple_ecom_app/models/product.dart';
 
 class Shop extends ChangeNotifier {
+   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   //product for sale
   final List<Product> _shop = [
     Product(
@@ -38,7 +41,9 @@ class Shop extends ChangeNotifier {
   //get user cart
   List<Product> get cart=> _cart;
   //add item to cart
-  void addToCart(Product item){
+ Future<void> addToCart(Product item,String user,String email) async{
+    UserOrder neworder= UserOrder(prodname: item.name, useremail: email, userid: user);
+    await _firestore.collection("orders").add(neworder.toMap());
     _cart.add(item);
     notifyListeners();
   }

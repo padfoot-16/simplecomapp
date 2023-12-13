@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:simple_ecom_app/models/product.dart';
@@ -9,6 +10,11 @@ class MyProducttile extends StatelessWidget {
   const MyProducttile({super.key, required this.product});
 
   void addTocart(BuildContext context) {
+      final FirebaseAuth _firebaseauth = FirebaseAuth.instance;
+      //get current user info
+    final String currentUserId = _firebaseauth.currentUser!.uid;
+    final String currentUseremail = _firebaseauth.currentUser!.email.toString();
+      
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -20,7 +26,7 @@ class MyProducttile extends StatelessWidget {
           MaterialButton(
               onPressed: () {
                 Navigator.pop(context);
-                context.read<Shop>().addToCart(product);
+                context.read<Shop>().addToCart(product,currentUserId,currentUseremail);
               }, 
               child: Text("Yes")),
         ],
